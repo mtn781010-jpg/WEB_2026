@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kara Kartal | Beşiktaş</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: white;
+    }
+
+    header {
+      background: #080808;
+      padding: 20px;
+      border-bottom: 3px solid #e31837;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header span {
+      color: #e31837;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 15px;
+      background: #171717;
+    }
+
+    nav button {
+      background: transparent;
+      color: white;
+      border: 1px solid #444;
+      padding: 12px 16px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: #e31837;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px 16px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #222, #050505);
+      border-radius: 15px;
+      border: 1px solid #333;
+    }
+
+    .hero h2 {
+      font-size: clamp(30px, 6vw, 52px);
+    }
+
+    .hero span {
+      color: #e31837;
+    }
+
+    .section {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #191919;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: #ff4059;
+    }
+
+    .card p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .match {
+      background: #191919;
+      padding: 18px;
+      margin: 12px 0;
+      border-left: 4px solid #e31837;
+      border-radius: 6px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
+      background: #111;
+      border-top: 2px solid #e31837;
+    }
+
+    a {
+      color: #ff4059;
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav button {
+        width: 100%;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🦅 KARA <span>KARTAL</span></h1>
+    <p>Bir sevda meselesi: Beşiktaş!</p>
+  </header>
+
+  <nav>
+    <button class="active" data-page="home">Ana Sayfa</button>
+    <button data-page="news">Haberler</button>
+    <button data-page="fixtures">Maç Fikstürü</button>
+    <button data-page="players">Oyuncular</button>
+    <button data-page="gallery">Fotoğraflar</button>
+  </nav>
+
+  <main>
+
+    <section id="home" class="section active">
+      <div class="hero">
+        <h2>ŞEREFİNLE <span>OYN A</span></h2>
+        <h2>HAKKINLA KAZAN!</h2>
+        <p>Siyahın asaleti, beyazın umudu!</p>
+        <button onclick="showPage('news')">
+          Haberleri keşfet
+        </button>
+      </div>
+    </section>
+
+    <section id="news" class="section">
+      <h2>📰 Beşiktaş Haberleri</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Kara Kartal</h3>
+          <p>Beşiktaş taraftarlarının buluşma noktası!</p>
+        </article>
+
+        <article class="card">
+          <h3>Maç Günü</h3>
+          <p>Takımına destek ol, siyah-beyaz sevdanı yaşa.</p>
+        </article>
+
+        <article class="card">
+          <h3>Taraftar</h3>
+          <p>Bir arma, milyonlarca yürek!</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="fixtures" class="section">
+      <h2>⚽ Maç Fikstürü</h2>
+
+      <div class="match">
+        <h3>Beşiktaş - Rakip Takım</h3>
+        <p>Tarih: Resmî programdan kontrol et.</p>
+      </div>
+
+      <div class="match">
+        <h3>Rakip Takım - Beşiktaş</h3>
+        <p>Tarih: Resmî programdan kontrol et.</p>
+      </div>
+
+      <p>
+        Güncel fikstür:
+        <a href="https://www.bjk.com.tr/tr"
+           target="_blank" rel="noopener">
+          Beşiktaş resmî sitesi
+        </a>
+      </p>
+    </section>
+
+    <section id="players" class="section">
+      <h2>🦅 Oyuncular</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Kaleci</h3>
+          <p>Oyuncu bilgisi eklenecek.</p>
+        </article>
+
+        <article class="card">
+          <h3>Defans</h3>
+          <p>Oyuncu bilgisi eklenecek.</p>
+        </article>
+
+        <article class="card">
+          <h3>Orta Saha</h3>
+          <p>Oyuncu bilgisi eklenecek.</p>
+        </article>
+
+        <article class="card">
+          <h3>Forvet</h3>
+          <p>Oyuncu bilgisi eklenecek.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>📸 Fotoğraf Galerisi</h2>
+
+      <div class="gallery">
+        <img
+          src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80"
+          alt="Futbol stadyumu">
+
+        <img
+          src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80"
+          alt="Futbol sahası">
+
+        <img
+          src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=600&q=80"
+          alt="Futbol topu">
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>🦅 KARA KARTAL</p>
+    <p>1903 · Siyah-Beyaz Sevda</p>
+    <small>Bağımsız taraftar sitesi tasarımıdır.</small>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll(".section")
+        .forEach(section => {
+          section.classList.remove("active");
+        });
+
+      document.getElementById(pageId)
+        .classList.add("active");
+
+      document.querySelectorAll("nav button")
+        .forEach(button => {
+          button.classList.toggle(
+            "active",
+            button.dataset.page === pageId
+          );
+        });
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    document.querySelectorAll("nav button")
+      .forEach(button => {
+        button.addEventListener("click", () => {
+          showPage(button.dataset.page);
+        });
+      });
+  </script>
+
+</body>
+</html>
